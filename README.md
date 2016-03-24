@@ -14,20 +14,20 @@ edit ~/.homestead/Homestead.yaml to look like this:
   memory: 2048
   cpus: 1
   provider: virtualbox
-   
+  
   authorize: ~/.ssh/id_rsa.pub
-   
+  
   keys:
-     - ~/.ssh/id_rsa
+      - ~/.ssh/id_rsa
  
   folders:
-       - map: ~/path/to/projectDirectory
+      - map: ~/path/to/projectDirectory
         to: /home/vagrant/Code
   
   sites:
       - map: homestead.app
         to: /home/vagrant/Code/public  <---Made an edit here to remove /Laravel from the path
-  
+        
   databases:
       - homestead
 
