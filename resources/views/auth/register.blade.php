@@ -69,7 +69,7 @@
                         <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Company</label>
                             <div class="col-md-6">
-                                <select class="form-control" name="company" id="sel1" required>
+                                <select class="form-control" name="company">
                                     @foreach ($companies as $company)
                                         <option value="{{ $company->id }}">{{$company->name}}</option>
                                     @endforeach

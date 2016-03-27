@@ -12,7 +12,6 @@ use App\Repositories\UserRepository;
 class UserController extends Controller
 {
     protected $users;
-    protected $companies;
 
     public function __construct(UserRepository $users)
     {

@@ -156,6 +156,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /* 
+         * Dingo Service Provider
+         */
+
+        Dingo\Api\Provider\LaravelServiceProvider::class,
     ],
 
     /*

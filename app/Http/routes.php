@@ -24,27 +24,34 @@
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
+$api = app('Dingo\Api\Routing\Router');
 
-    Route::get('/', function() {
+
+$api->version('v1', ['middleware' => ['web']], function ($api) {
+    $api->get(null , function() {
         return redirect('/companies');
-    })->middleware('guest');
-
-    Route::get('/registers', 'CompanyController@register');//gross
-
-    Route::get('/user/{user}', 'UserController@editView');
-    Route::post('user/{user}', 'UserController@edit');
-
-    Route::get('/companies', 'CompanyController@index');
-    Route::post('/company', 'CompanyController@store');
-    Route::get('/company/{company}', 'CompanyController@editView');
-    Route::post('/company/{company}', 'CompanyController@edit');
-
-    Route::get('/conversations', 'ConversationController@index');
-    Route::post('/conversation', 'ConversationController@store');
-    Route::get('/conversation/{conversation}', 'ConversationController@editView');
-    Route::post('/conversation/{conversation}', 'ConversationController@edit');
-
-    Route::auth();
-
+    });
+    $api->post('/user/{user}', 
+        'App\Http\Controllers\UserController@edit');
+    $api->post('/company', 
+        'App\Http\Controllers\CompanyController@store');
+    $api->post('/company/{company}', 
+        'App\Http\Controllers\CompanyController@edit');
+    $api->post('/conversation', 
+        'App\Http\Controllers\ConversationController@store');
+    $api->get('/conversation/{conversation}', 
+        'App\Http\Controllers\ConversationController@editView');
+    $api->get('registers', 
+        'App\Http\Controllers\CompanyController@register');
+    $api->get('user/{user}', 
+        'App\Http\Controllers\UserController@editView');
+    $api->get('companies',
+        'App\Http\Controllers\CompanyController@index');
+    $api->get('company/{company}',
+        'App\Http\Controllers\CompanyController@editView');
+    $api->get('conversations', 
+        'App\Http\Controllers\ConversationController@index');
+    $api->get('conversation/{conversation}',
+        'App\Http\Controllers\ConversationController@editView');
 });
+
