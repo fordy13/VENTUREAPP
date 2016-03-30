@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New Company Form -->
-                    <form action="/company/{{ $company->id }}" method="POST" class="form-horizontal">
+                    <form action="/api/company/{{ $company->id }}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <!-- Company Name -->

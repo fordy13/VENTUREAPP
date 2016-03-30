@@ -122,7 +122,10 @@ return [
     */
 
     'providers' => [
-
+        /* 
+         * Dingo Service Provider
+         */
+        Dingo\Api\Provider\LaravelServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
          */
@@ -155,12 +158,6 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        /* 
-         * Dingo Service Provider
-         */
-
-        Dingo\Api\Provider\LaravelServiceProvider::class,
     ],
 
     /*

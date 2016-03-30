@@ -42,6 +42,7 @@ class ConversationController extends Controller
 
     public function edit(Request $request, Conversation $conversation)
     {
+        // dd($request);
         $this->authorize('edit', $conversation);
 
         $conversation->name = $request->name;
