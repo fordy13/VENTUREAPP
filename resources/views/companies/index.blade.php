@@ -59,7 +59,7 @@
                                                 @if (!Auth::guest())
                                                     @if (Auth::user()->company_id == $company->id)
                                                         <button type="submit" id="delete-company-{{ $company->id }}" class="btn btn-default">
-                                                            <i class="fa fa-btn fa-edit"></i>{{ $company->id }}
+                                                            <i class="fa fa-btn fa-edit"></i>Edit
                                                         </button>
                                                     @endif
                                                 @endif
