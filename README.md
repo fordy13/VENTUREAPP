@@ -62,7 +62,7 @@ TODOs:
 --Answer
 ---id/user_id/question_id/value/created_at
 -make a Q&A tab 
----which has a button at the top "Ask a Question"
+---which has a button and a form at the top "Ask a Question"
 ---where it lists questions that have been asked
 ----if the user is logged in it shows an "Answer Question" button for each question
 -Clicking on a company in the /companies view will bring up a view of that company's most recent answers to each question, and the user who answered it. 

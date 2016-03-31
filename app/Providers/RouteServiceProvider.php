@@ -23,10 +23,12 @@ class RouteServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot(Router $router)
-    {
+    {//I don't think this even gets called anymore, at least not on the Dingo routes
         $router->model('user', 'App\User');
         $router->model('conversation', 'App\Conversation');
         $router->model('company', 'App\Company');
+        $router->model('question', 'App\Question');
+        $router->model('answer', 'App\Answer');
         parent::boot($router);
     }
 

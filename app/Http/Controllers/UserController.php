@@ -28,7 +28,7 @@ class UserController extends Controller
     public function edit(Request $request, User $user)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255',//validate email, too
         ]);
 
         $user->name = $request->name;

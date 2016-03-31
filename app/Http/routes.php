@@ -54,8 +54,10 @@ $api->version('v1', function ($api) {
             'App\Http\Controllers\ConversationController@store');
         $api->post('/conversation/{conversation}', 
             'App\Http\Controllers\ConversationController@edit');
-    
-
+        $api->post('/question',
+            'App\Http\Controllers\QuestionController@store');
+        $api->post('/answer/{question}',
+            'App\Http\Controllers\AnswerController@store');
         // $api->get('registers', 
         //     'App\Http\Controllers\CompanyController@register');
         // $api->get('user/{user}', 
