@@ -12,7 +12,6 @@ class CompanyPolicy
 
     public function edit(User $user, Company $company)
     {
-        dd($user, $company);
         return $user->company_id === $company->id;
     }
 }

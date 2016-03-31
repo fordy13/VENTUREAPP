@@ -13,7 +13,7 @@
                     @include('common.errors')
 
                     <!-- New Conversation Form -->
-                    <form action="/conversation/{{ $conversation->id }}" method="POST" class="form-horizontal">
+                    <form action="/api/conversation/{{ $conversation->id }}" method="POST" class="form-horizontal">
                         {{ csrf_field() }}
 
                         <!-- Conversation Name -->

@@ -37,14 +37,10 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('company/{company}','CompanyController@editView');
     Route::get('conversations', 'ConversationController@index');
     Route::get('conversation/{conversation}','ConversationController@editView');
-    Route::post('/conversation/{conversation}', 'ConversationController@edit');
     Route::auth();
 });
 
 $api->version('v1', function ($api) {
-    // $api->get(null , function() {
-    //     return redirect('/companies');
-    // });
 
     $api->group(['middleware' => 'web'], function ($api) {
         $api->post('/user/{user}', 
@@ -55,21 +51,22 @@ $api->version('v1', function ($api) {
             'App\Http\Controllers\CompanyController@edit');
         $api->post('/conversation', 
             'App\Http\Controllers\ConversationController@store');
-        // $api->post('/conversation/{conversation}', 
-        //     'App\Http\Controllers\ConversationController@edit');
-    });
+        $api->post('/conversation/{conversation}', 
+            'App\Http\Controllers\ConversationController@edit');
+    
 
-    // $api->get('register', 
-    //     'App\Http\Controllers\CompanyController@register');
-    // $api->get('user/{user}', 
-    //     'App\Http\Controllers\UserController@editView');
-    // $api->get('companies',
-    //     'App\Http\Controllers\CompanyController@index');
-    // $api->get('company/{company}',
-    //     'App\Http\Controllers\CompanyController@editView');
-    // $api->get('conversations', 
-    //     'App\Http\Controllers\ConversationController@index');
-    // $api->get('conversation/{conversation}',
-    //     'App\Http\Controllers\ConversationController@editView');
+        // $api->get('registers', 
+        //     'App\Http\Controllers\CompanyController@register');
+        // $api->get('user/{user}', 
+        //     'App\Http\Controllers\UserController@editView');
+        // $api->get('companies',
+        //     'App\Http\Controllers\CompanyController@index');
+        // $api->get('company/{company}',
+        //     'App\Http\Controllers\CompanyController@editView');
+        // $api->get('conversations', 
+        //     'App\Http\Controllers\ConversationController@index');
+        // $api->get('conversation/{conversation}',
+        //     'App\Http\Controllers\ConversationController@editView');
+    });
 });
 
