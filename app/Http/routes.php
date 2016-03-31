@@ -30,13 +30,14 @@ Route::group(['middleware' => ['web']], function (){
     Route::get(null , function() {
         return redirect('/companies');
     });
-    Route::get('/conversation/{conversation}', 'ConversationController@editView');
+    Route::get('conversation/{conversation}', 'ConversationController@editView');
     Route::get('registers', 'CompanyController@register');
     Route::get('user/{user}', 'UserController@editView');
     Route::get('companies','CompanyController@index');
     Route::get('company/{company}','CompanyController@editView');
     Route::get('conversations', 'ConversationController@index');
     Route::get('conversation/{conversation}','ConversationController@editView');
+    Route::get('questions', 'QuestionController@index');
     Route::auth();
 });
 

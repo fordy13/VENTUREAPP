@@ -4,6 +4,7 @@ namespace App;
 
 use App\Conversation;
 use App\Company;
+use App\Answer;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -19,6 +20,11 @@ class User extends Authenticatable
     public function conversations()
     {
         return $this->hasMany(Conversation::class);
+    }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
     }
 
     public function company()

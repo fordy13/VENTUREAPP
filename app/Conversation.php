@@ -7,7 +7,7 @@ use App\User;
 
 class Conversation extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = ['title'];
 
     public function user()
     {

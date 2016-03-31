@@ -51,6 +51,7 @@
                     @if (!Auth::guest())
                         <li><a href="{{ url('/conversations') }}">Conversations</a></li>
                     @endif
+                    <li><a href="{{ url('/questions') }}">Q&A</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
