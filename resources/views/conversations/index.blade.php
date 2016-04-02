@@ -21,7 +21,7 @@
                             <label for="conversation-name" class="col-sm-3 control-label">Conversation</label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="conversation-name" class="form-control" value="{{ old('conversation') }}">
+                                <input type="text" name="name" id="conversation-name" class="form-control" value="{{ old('conversation') }}" required>
                             </div>
                         </div>
 

@@ -33,16 +33,16 @@ class ConversationController extends Controller
             'name' => 'required|max:255',
         ]);
 
-        $request->user()->conversations()->create([
-            'name' => $request->name,
-        ]);
+        $conversation = new Conversation;
+        $conversation->name = $request->name;
+        $conversation->user_id = $request->user()->id;
+        $conversation->save();
 
         return redirect('/conversations');
     }
 
     public function edit(Request $request, Conversation $conversation)
     {
-        // dd($request);
         $this->authorize('edit', $conversation);
 
         $conversation->name = $request->name;

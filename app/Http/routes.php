@@ -38,6 +38,7 @@ Route::group(['middleware' => ['web']], function (){
     Route::get('conversations', 'ConversationController@index');
     Route::get('conversation/{conversation}','ConversationController@editView');
     Route::get('questions', 'QuestionController@index');
+    Route::get('questions/{company}', 'QuestionController@listAnswers');
     Route::auth();
 });
 

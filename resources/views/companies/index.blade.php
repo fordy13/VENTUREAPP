@@ -49,7 +49,7 @@
                             <tbody>
                                 @foreach ($companies as $company)
                                     <tr>
-                                        <td class="table-text"><div>{{ $company->name }}</div></td>
+                                        <td class="table-text"><a href="/questions/{{$company->id}}">{{ $company->name }}</a></td>
 
                                         <!-- Company Edit Button -->
                                         <td>
