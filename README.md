@@ -42,10 +42,14 @@ php artisan db:seed (optional)
 How to use it:
 
 1. Create a Company
-2. Register as a user - Must select a company
-3. create and edit conversations
-4. Edit your user's company from the list
-5. Edit user information from navbar dropdown
+2. Ask a question in the Q&A tabl
+3. Register as a user - Must select a company
+4. create and edit conversations
+5. Answer questions for your company in the Q&A tab
+6. Edit your user's company name from the list
+7. Edit user information from navbar dropdown
+8. Click your company's name from the list to view the most 
+recent answer (from that company's user pool) to each of the questions
 
 -------
 
@@ -55,17 +59,8 @@ TIL dd() is my log tool
 
 TODOs:
 
--authenticate user edit route
--create new table migrations, models, repos, policies, routes and controllers for
---Question
----id/title
---Answer
----id/user_id/question_id/value/created_at
--make a Q&A tab 
----which has a button and a form at the top "Ask a Question"
----where it lists questions that have been asked
-----if the user is logged in it shows an "Answer Question" button for each question
--Clicking on a company in the /companies view will bring up a view of that company's most recent answers to each question, and the user who answered it. 
+-clean up that last query (8.) (research table joins)
+-authenticate user edits on the back end
 
 
 
